@@ -1,0 +1,64 @@
+{
+	"name": "pa-commonlib-helper",
+	"displayName": "pa_CommonLib_Helper",
+	"description": "use it to create driver code module of pa_CommonLib for new mcu to fit,用它来创建pa_CommonLib的驱动代码模板，用于适配新的mcu开发",
+	"version": "0.0.1",
+	"publisher": "hanbaoaaa",
+	"engines": {
+		"vscode": "^1.49.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:pa-commonlib-helper.helloWorld"
+		,"onCommand:pa-commonlib-helper.editlala"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "pa-commonlib-helper.helloWorld",
+				"title": "创建pa_CommonLib驱动模板"
+			},
+			{
+				"command": "pa-commonlib-helper.editlala",
+				"title": "编辑pa_CommonLib芯片宏定义"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "pa-commonlib-helper.helloWorld",
+					"group": "navigation"
+				},
+				{
+					"command": "pa-commonlib-helper.editlala",
+					"group": "navigation"
+				}
+				
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.49.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^14.0.27",
+		"eslint": "^7.6.0",
+		"@typescript-eslint/eslint-plugin": "^3.8.0",
+		"@typescript-eslint/parser": "^3.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.0.2",
+		"vscode-test": "^1.4.0"
+	}
+}
